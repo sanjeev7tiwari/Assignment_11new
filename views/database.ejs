@@ -1,0 +1,8 @@
+<% data.forEach(todo => { %>
+  <div style="text-align: center;">
+    <span><%= todo.todoText %></span>
+    <span><%= todo.priority %></span>
+    <input type="checkbox" id="<%= todo.id %>" <% if (todo.completed) { %>checked<% } %> onchange="updateStatus('<%= todo.id %>')">
+    <button onclick="deleteTodo('<%= todo.id %>')">Delete</button>
+  </div>
+<% }) %>
